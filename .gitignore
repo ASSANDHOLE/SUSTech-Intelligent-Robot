@@ -1,0 +1,8 @@
+# build
+lab/catkin_ws/build/
+lab/catkin_ws/devel/
+
+# IDE output
+lab/catkin_ws/**/cmake-build-*/
+**/.idea/
+

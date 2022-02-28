@@ -1,0 +1,19 @@
+<launch>
+    <arg name="start_delay" default="1.0"/>
+    <arg name="cmd_delay" default="2.0"/>
+    <arg name="extra_delay" default="4.0"/>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_main_node" output="screen" launch-prefix="bash -c '$0 $@ 2>/dev/null'"/>
+    <node pkg="lab2_task" type="turtle_cmd_srv" name="turtle_cmd_server" output="screen"/>
+    <node pkg="lab2_task" type="turtle_create_cli" name="create_1" args="aaa01" launch-prefix="bash -c 'sleep $(arg start_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_create_cli" name="create_2" args="aaa02" launch-prefix="bash -c 'sleep $(arg start_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_create_cli" name="create_3" args="aaa03" launch-prefix="bash -c 'sleep $(arg start_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_create_cli" name="create_4" args="aaa04" launch-prefix="bash -c 'sleep $(arg start_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_cmd_cli" name="cmd0" args="turtle1 1 0" launch-prefix="bash -c 'sleep $(arg cmd_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_cmd_cli" name="cmd1" args="aaa01 1 0" launch-prefix="bash -c 'sleep $(arg cmd_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_cmd_cli" name="cmd2" args="aaa01 2 1.8" launch-prefix="bash -c 'sleep $(arg extra_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_cmd_cli" name="cmd3" args="aaa02 1 0" launch-prefix="bash -c 'sleep $(arg cmd_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_cmd_cli" name="cmd4" args="aaa03 1 0" launch-prefix="bash -c 'sleep $(arg cmd_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_cmd_cli" name="cmd5" args="aaa03 0 0" launch-prefix="bash -c 'sleep $(arg extra_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_cmd_cli" name="cmd6" args="aaa04 1 0" launch-prefix="bash -c 'sleep $(arg cmd_delay); $0 $@'" output="screen"/>
+    <node pkg="lab2_task" type="turtle_cmd_cli" name="cmd7" args="aaa04 2 0.3" launch-prefix="bash -c 'sleep $(arg extra_delay); $0 $@'" output="screen"/>
+</launch>

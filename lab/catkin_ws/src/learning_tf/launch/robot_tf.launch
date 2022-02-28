@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="learning_tf" type="robot_broadcaster" name="robot_tf_broadcaster" output="screen"/>
+    <node pkg="learning_tf" type="robot_listener" name="robot_tf_listener" launch-prefix="bash -c '$0 $@ 2>/dev/null'" output="screen"/>
+</launch>
